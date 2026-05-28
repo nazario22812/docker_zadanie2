@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "axios": "^1.15.2",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.2",
+    "handlebars": "^4.7.9"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "author": "Nazarii Kravchenko",
+  "license": "ISC",
+  "description": ""
+}
