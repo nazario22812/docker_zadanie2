@@ -42,7 +42,7 @@ jobs:
         with:
           image-ref: 'ghcr.io/${{ github.repository }}:test'
           format: 'table'
-          exit-code: '0'
+          exit-code: '1'
           ignore-unfixed: true
           severity: 'HIGH,CRITICAL'
 
