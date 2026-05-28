@@ -33,7 +33,6 @@ LABEL org.opencontainers.image.authors="Nazarii Kravchenko"
 # Ustawiamy docelowy katalog roboczy dla działającej aplikacji.
 WORKDIR /pogoda
 
-
 RUN apk update && apk upgrade --no-cache
 
 # Optymalizacja pod kątem zawartości i ilości warstw:
