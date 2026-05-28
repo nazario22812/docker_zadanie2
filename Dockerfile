@@ -1,7 +1,7 @@
 # ETAP 1: Budowanie (Builder) - Wieloetapowe budowanie obrazu
 # Wykorzystujemy lekką wersję Alpine z Node.js, aby zminimalizować rozmiar bazowy.
 # Używamy aliasu 'builder', aby móc skopiować z niego pliki w kolejnym etapie.
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 
 # Ustawiamy katalog roboczy dla pierwszego etapu budowania.
 WORKDIR /pogoda
@@ -25,7 +25,7 @@ COPY . .
 
 # ETAP 2: Obraz docelowy (Runner) - Optymalizacja rozmiaru i warstw
 # Ponownie używamy czystego i lekkiego obrazu Alpine dla finalnego kontenera.
-FROM node:20-alpine
+FROM node:22-alpine
 
 # Wymóg z zadania: Dodanie informacji na temat autora zgodej ze standardem OCI.
 LABEL org.opencontainers.image.authors="Nazarii Kravchenko"
