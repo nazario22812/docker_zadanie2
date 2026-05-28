@@ -6,6 +6,10 @@ FROM node:20-alpine AS builder
 # Ustawiamy katalog roboczy dla pierwszego etapu budowania.
 WORKDIR /pogoda
 
+
+
+RUN apk update && apk upgrade --no-cache
+
 # Optymalizacja funkcjonowania cache-a:
 # Kopiujemy najpierw TYLKO pliki package.json oraz package-lock.json.
 # Dzięki temu kosztowna czasowo warstwa z 'npm install' przebuduje się tylko wtedy, 
@@ -28,6 +32,9 @@ LABEL org.opencontainers.image.authors="Nazarii Kravchenko"
 
 # Ustawiamy docelowy katalog roboczy dla działającej aplikacji.
 WORKDIR /pogoda
+
+
+RUN apk update && apk upgrade --no-cache
 
 # Optymalizacja pod kątem zawartości i ilości warstw:
 # Zamiast kopiować całą zawartość z poprzedniego etapu, przenosimy (cherry-picking)
